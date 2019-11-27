@@ -7,10 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -36,9 +33,9 @@ public class UserResource {
         return stringMessage;
     }
 
-    @GetMapping("/publish/user")
-    public User publishUserData() {
-        User user = new User(new Random().nextInt(100), "Vipul", new String[] {"India", "IN", "New Delhi"});
+    @PostMapping("/publish/user")
+    public User publishUserData(@RequestBody User user) {
+        // User user = new User(new Random().nextInt(100), "Vipul", new String[] {"India", "IN", "New Delhi"});
         Message<User> message = MessageBuilder.withPayload(user).setHeader(KafkaHeaders.TOPIC, userTopic).build();
         kafkaTemplate.send(message);
 
