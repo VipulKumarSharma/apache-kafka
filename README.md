@@ -35,9 +35,9 @@ And Launch the batch files stored in `...\bin\windows\` folder.</i>
 
 ### Publish Data 
     
-[GET] [localhost:8081/kafka/publish/{username}](localhost:8081/kafka/publish/{username})
+[GET] [http://localhost:8081/kafka/publish/{username}](http://localhost:8081/kafka/publish/{username})
 
-[POST] [localhost:8081/kafka/publish/user](localhost:8081/kafka/publish/user)
+[POST] [http://localhost:8081/kafka/publish/user](http://localhost:8081/kafka/publish/user)
 
 ### Get Latest Consumed Data
 
