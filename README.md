@@ -47,4 +47,4 @@ And Launch the batch files stored in `...\bin\windows\` folder.</i>
 
 ### Sample Model
 
-    {"id":454,"name":"Testing","address":["India","IN","New Delhi"]}
+    {"id":454,"name":"Testing","address":"New Delhi, India"}

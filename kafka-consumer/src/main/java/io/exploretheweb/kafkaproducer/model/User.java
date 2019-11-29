@@ -4,13 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.Id;
+
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
 
-    private int id;
+    @Id
+    private Long id;
     private String name;
-    private String[] address;
+    private String address;
 
 }

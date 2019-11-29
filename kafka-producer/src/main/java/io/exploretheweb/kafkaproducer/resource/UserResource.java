@@ -35,7 +35,6 @@ public class UserResource {
 
     @PostMapping("/publish/user")
     public User publishUserData(@RequestBody User user) {
-        // User user = new User(new Random().nextInt(100), "Vipul", new String[] {"India", "IN", "New Delhi"});
         Message<User> message = MessageBuilder.withPayload(user).setHeader(KafkaHeaders.TOPIC, userTopic).build();
         kafkaTemplate.send(message);
 

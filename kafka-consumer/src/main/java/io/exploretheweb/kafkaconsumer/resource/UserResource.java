@@ -1,6 +1,7 @@
 package io.exploretheweb.kafkaconsumer.resource;
 
 import io.exploretheweb.kafkaconsumer.listener.KafkaConsumer;
+import io.exploretheweb.kafkaconsumer.respository.UserRepository;
 import io.exploretheweb.kafkaproducer.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,9 @@ import java.util.List;
 public class UserResource {
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     KafkaConsumer kafkaConsumer;
 
     @GetMapping("/consume/string")
@@ -23,6 +27,7 @@ public class UserResource {
 
     @GetMapping("/consume/user")
     public List<User> getUsers() {
-        return kafkaConsumer.getUsers();
+        return (List<User>) userRepository.findAll();
     }
+
 }
