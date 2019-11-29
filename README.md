@@ -45,6 +45,13 @@ And Launch the batch files stored in `...\bin\windows\` folder.</i>
 
 [GET] [http://localhost:8082/kafka/consume/user](http://localhost:8082/kafka/consume/user)
 
+### Database
+
+[URL] [http://localhost:8082/h2](http://localhost:8082/h2)
+
+[H2 JDBC] `jdbc:h2:mem:testdb`
+
+
 ### Sample Model
 
     {"id":454,"name":"Testing","address":"New Delhi, India"}
